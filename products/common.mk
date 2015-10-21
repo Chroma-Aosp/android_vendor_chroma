@@ -16,8 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0 \
     ro.build.selinux=1 \
-    ro.adb.secure=1 \
-    persist.sys.usb.config=mtp,adb
+    ro.adb.secure=1
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -49,7 +48,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/chroma/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/chroma/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
- 
+
+# Init.d script support
+PRODUCT_COPY_FILES += \
+    vendor/chroma/prebuilt/common/bin/sysinit:system/bin/sysinit
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/chroma/prebuilt/common/addon.d/50-chroma.sh:system/addon.d/50-chroma.sh \
